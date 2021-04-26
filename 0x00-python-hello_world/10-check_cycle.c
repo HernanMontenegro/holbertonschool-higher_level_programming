@@ -10,7 +10,10 @@ int check_cycle(listint_t *list)
 {
 	int n = 0, head_n = list->n, iteration = 0;
 
-	while (list != NULL)
+	if (!list)
+		return (0);
+
+	while (list)
 	{
 		n = list->n;
 		if (head_n == n)
