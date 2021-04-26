@@ -8,20 +8,19 @@
 */
 int check_cycle(listint_t *list)
 {
-	int n = 0, head_n = list->n, iteration = 0;
+	listint_t *aux = NULL;
 
 	if (!list)
 		return (0);
 
-	while (list)
+	aux = list;
+	while (aux)
 	{
-		n = list->n;
-		if (head_n == n)
-			iteration++;
-		if (iteration == 2)
-			return (1);
+		list = aux;
+		aux = aux->next;
 
-		list = list->next;
+		if (list <= aux)
+			return (1);
 	}
 
 	return (0);
