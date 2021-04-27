@@ -25,15 +25,17 @@ listint_t *insert_node(listint_t **head, int number)
 			return (add_nodeint_end(head, number));
 		/* Iteramos hasta encontrar nuestro hueco en el mundo... */
 		if (number > current->n && number <= current->next->n)
-			break;
+		{
+			new_element = malloc(sizeof(listint_t));
+			if (!new_element)
+				return (NULL);
+			new_element->n = number;
+			new_element->next = current->next;
+
+			current->next = new_element;
+			return (new_element);
+		}
 		current = current->next;
 	}
-	new_element = malloc(sizeof(listint_t));
-	if (!new_element)
-		return (NULL);
-	new_element->n = number;
-	new_element->next = current->next;
-
-	current->next = new_element;
-	return (new_element);
+	return (NULL);
 }
