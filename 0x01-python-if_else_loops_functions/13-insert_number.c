@@ -13,10 +13,19 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *current = NULL, *new_element = NULL;
 
 	if (!head || !(*head))
+		return (add_nodeint_end(head, number));
+	/* I'M THE NEW LEADER */
+	if (number <= (*head)->n)
 	{
-		new_element = add_nodeint_end(head, number);
+		new_element = malloc(sizeof(listint_t));
+		if (!new_element)
+			return (NULL);
+		new_element->n = number;
+		new_element->next = *head;
+		*head = new_element;
 		return (new_element);
 	}
+	/* ============================== */
 	current = *head;
 	while (current != NULL)
 	{
@@ -37,5 +46,6 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		current = current->next;
 	}
+	/* ================================ */
 	return (NULL);
 }
