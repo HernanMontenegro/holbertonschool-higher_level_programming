@@ -21,7 +21,7 @@ listint_t *insert_node(listint_t **head, int number)
 	while (current != NULL)
 	{
 		/* Iteramos hasta encontrar nuestro hueco en el mundo... */
-		if (number > current->n && number <= current->next->n)
+		if (number >= current->n && number <= current->next->n)
 			break;
 		current = current->next;
 	}
