@@ -20,8 +20,11 @@ listint_t *insert_node(listint_t **head, int number)
 	current = *head;
 	while (current != NULL)
 	{
+		/* If next doesn't exist... I'm the last one ;C */
+		if (current->next == NULL)
+			return (add_nodeint_end(head, number));
 		/* Iteramos hasta encontrar nuestro hueco en el mundo... */
-		if (number >= current->n && number <= current->next->n)
+		if (number > current->n && number <= current->next->n)
 			break;
 		current = current->next;
 	}
