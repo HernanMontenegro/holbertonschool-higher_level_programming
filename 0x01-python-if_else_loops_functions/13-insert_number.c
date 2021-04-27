@@ -12,13 +12,26 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *current = NULL, *new_element = NULL;
 
+	new_element = malloc(sizeof(listint_t));
+	if (!new_element)
+		return (NULL);
+	if (!head || !(*head))
+	{
+		new_element->n = number;
+		new_element->next = NULL;
+		*head = new_element;
+		return (new_element);
+	}
 	current = *head;
 	while (current != NULL)
 	{
 		/* Iteramos hasta encontrar nuestro hueco en el mundo... */
-		if (number > current->n && number < current->next->n)
-			break;
-
+		if (number > current->n)
+		{
+			if (current->next)
+				if (number < current->next->n)
+					break;
+		}
 		current = current->next;
 	}
 	if (current == *head)
@@ -26,9 +39,7 @@ listint_t *insert_node(listint_t **head, int number)
 		new_element = add_nodeint_end(head, number);
 		return (new_element);
 	}
-	new_element = malloc(sizeof(listint_t));
-	if (!new_element)
-		return (NULL);
+	
 	new_element->n = number;
 	new_element->next = current->next;
 
