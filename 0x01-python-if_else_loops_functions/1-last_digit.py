@@ -5,7 +5,7 @@ last_digit = 0
 result = ""
 if number < 0:
     last_digit = -number % 10
-    last_digit *= -1;
+    last_digit *= -1
 else:
     last_digit = number % 10
 result = "The last digit of " + str(number) + " is " + str(last_digit) + " "
