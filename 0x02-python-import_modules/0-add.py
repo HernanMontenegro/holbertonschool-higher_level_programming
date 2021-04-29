@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#Avoid executing if isn't a main function
+# Avoid executing if isn't a main function
 if __name__ == "__main__":
     import add_0
     a = 1
