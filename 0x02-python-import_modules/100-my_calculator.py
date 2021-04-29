@@ -16,9 +16,10 @@ if __name__ == "__main__":
     second = int(av[3])
     if (av[2] == "+"):
         print("{:d} + {:d} = {:d}".format(first, second, first + second))
-    if (av[2] == "-"):
+    elif (av[2] == "-"):
         print("{:d} - {:d} = {:d}".format(first, second, first - second))
-    if (av[2] == "*"):
+    elif (av[2] == "*"):
         print("{:d} * {:d} = {:d}".format(first, second, first * second))
-    if (av[2] == "/"):
+    elif (av[2] == "/"):
         print("{:d} / {:d} = {:d}".format(first, second, first / second))
+    exit(0)
