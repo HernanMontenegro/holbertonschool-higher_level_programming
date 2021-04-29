@@ -17,12 +17,12 @@ if __name__ == "__main__":
     first = int(av[1])
     second = int(av[3])
     if (av[2] == "+"):
-        print("{:d} + {:d} = {:d}".format(first, second, first + second))
+        print("{:d} + {:d} = {:d}".format(first, second, add(first, second)))
     elif (av[2] == "-"):
-        print("{:d} - {:d} = {:d}".format(first, second, first - second))
+        print("{:d} - {:d} = {:d}".format(first, second, sub(first, second)))
     elif (av[2] == "*"):
-        print("{:d} * {:d} = {:d}".format(first, second, first * second))
+        print("{:d} * {:d} = {:d}".format(first, second, mul(first, second)))
     elif (av[2] == "/"):
-        print("{:d} / {:d} = {}".format(first, second, first / second))
+        print("{:d} / {:d} = {}".format(first, second, div(first, second)))
 
     exit(0)
