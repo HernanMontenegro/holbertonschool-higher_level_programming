@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def list_cpy(list):
     copy = []
-    for i in range(0, len(list) - 1):
+    for i in range(0, len(list)):
         copy.append(list[i])
     return copy
 
