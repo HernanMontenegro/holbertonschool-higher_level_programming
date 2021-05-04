@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
 #include "7-get_nodeint.c"
+unsigned int listint_count(const listint_t *h);
 
 /**
  * is_palindrome - Check if a list is palindrome
@@ -32,4 +32,27 @@ int is_palindrome(listint_t **head)
 	}
 
 	return (polindrome);
+}
+
+/**
+* listint_count - counts the list length
+* @h: a node given
+* ------------------------
+* Return: the length of a list
+*/
+unsigned int listint_count(const listint_t *h)
+{
+	unsigned int count = 0;
+	listint_t *current_h = (listint_t *) h;
+
+	if (!h)
+		return (count);
+
+	while (current_h)
+	{
+		count++;
+		current_h = current_h->next;
+	}
+
+	return (count);
 }
