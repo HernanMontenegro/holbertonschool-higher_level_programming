@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 	listint_t *rev = NULL, *aux = NULL, *aux2 = NULL;
 	int polindrome = 1;
 
-	if (!(*head))
+	if (!head || !(*head))
 		return (polindrome);
 
 	/* Copy every node*/
