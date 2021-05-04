@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "100-reverse_listint.c"
+#include "7-get_nodeint.c"
 
 /**
  * is_palindrome - Check if a list is palindrome
