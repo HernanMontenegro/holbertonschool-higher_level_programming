@@ -4,40 +4,31 @@
 #include "100-reverse_listint.c"
 
 /**
- * is_palindrome - Check if a list is polindrome
+ * is_palindrome - Check if a list is palindrome
  * @head: the head node
  * --------------------------------------------
  * Return: 1 if is polindrome, 0 if not
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *rev = NULL, *aux = NULL, *aux2 = NULL;
+	listint_t *aux = NULL, *aux2 = NULL;
 	int polindrome = 1;
+	unsigned int list_len, i, j;
 
 	if (!head || !(*head))
 		return (polindrome);
 
-	/* Copy every node*/
-	aux = *head;
-	while (aux)
-	{
-		add_nodeint_end(&rev, aux->n);
-		aux = aux->next;
-	}
-	/* Revert the copy */
-	reverse_listint(&rev);
+	list_len = listint_count(*head);
 
-	/* Compare if reverted list is equal to the original */
-	aux = *head;
-	aux2 = rev;
-	while (aux && aux2)
+	for (i = 0, j = (list_len - 1); i < list_len; i++, j--)
 	{
-		/* If a single number is different, isn't a polindrome */
+		aux = get_nodeint_at_index(*head, i);
+		aux2 = get_nodeint_at_index(*head, j);
 		if (aux->n != aux2->n)
+		{
 			polindrome = 0;
-
-		aux = aux->next;
-		aux2 = aux2->next;
+			break;
+		}
 	}
 
 	return (polindrome);
