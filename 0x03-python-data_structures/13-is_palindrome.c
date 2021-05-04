@@ -27,7 +27,7 @@ int is_palindrome(listint_t **head)
 		if (aux->n != aux2->n)
 		{
 			polindrome = 0;
-			break;
+			return (polindrome);
 		}
 	}
 
