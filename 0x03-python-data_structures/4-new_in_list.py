@@ -16,7 +16,7 @@ def new_in_list(my_list, idx, element):
     for i in range(0, len(my_list)):
         if (idx == i):
             copy.append(element)
-            i += i
+            i += 1
             continue
         copy.append(my_list[i])
 
