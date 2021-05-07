@@ -10,6 +10,6 @@ def weight_average(my_list=[]):
                 continue
             temp *= item[j]
             divi += item[j]
-        res +=temp
+        res += temp
 
-    return res / temp
+    return res / divi
