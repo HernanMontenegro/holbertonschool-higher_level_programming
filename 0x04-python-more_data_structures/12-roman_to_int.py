@@ -2,7 +2,6 @@
 def roman_to_int(roman_string):
     if not roman_string or not isinstance(roman_string, str):
         return None
-    len_s = len(roman_string)
     prev = 0
     int_val = 0
 
@@ -16,10 +15,9 @@ def roman_to_int(roman_string):
         'M': 1000,
     }
 
-    for i in range(len_s-1, -1, -1):
+    for i in range(len(roman_string)-1, -1, -1):
         if translation[roman_string[i]] >= prev:
             int_val += translation[roman_string[i]]
-
         else:
             int_val -= translation[roman_string[i]]
 
