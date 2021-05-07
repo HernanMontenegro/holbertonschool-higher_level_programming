@@ -2,10 +2,9 @@
 def roman_to_int(roman_string):
     if not roman_string or not isinstance(roman_string, str):
         return None
+    len_s = len(roman_string)
+    prev = 0
     int_val = 0
-    current_val = 0
-    next_val = 0
-    i = 0
 
     translation = {
         'I': 1,
@@ -23,21 +22,14 @@ def roman_to_int(roman_string):
         'CM': 900
     }
 
-    while i < len(roman_string):
-        current_val = translation[roman_string[i]]
-        if i + 1 < len(roman_string):
-            next_val = translation[roman_string[i + 1]]
-
-        if next_val != 0 and roman_string[i:i+2] in translation:
-            int_val += translation[roman_string[i:i+2]]
-            i += 2
-            print("i = {}".format(i))
+    for i in range(len_s-1, -1, -1):
+        if translation[roman_string[i]] >= prev:
+            int_val += translation[roman_string[i]]
+  
         else:
-            int_val += current_val
-            i += 1
-
-        current_val = 0
-        next_val = 0
+            int_val -= translation[roman_string[i]]
+  
+        prev = translation[roman_string[i]]
 
 
     return int_val
