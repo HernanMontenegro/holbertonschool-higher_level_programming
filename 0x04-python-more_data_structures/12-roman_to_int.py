@@ -31,11 +31,13 @@ def roman_to_int(roman_string):
         if next_val != 0 and roman_string[i:i+2] in translation:
             int_val += translation[roman_string[i:i+2]]
             i += 2
+            print("i = {}".format(i))
         else:
             int_val += current_val
+            i += 1
 
         current_val = 0
         next_val = 0
-        i += 1
+
 
     return int_val
