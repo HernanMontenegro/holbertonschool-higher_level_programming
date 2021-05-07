@@ -14,12 +14,6 @@ def roman_to_int(roman_string):
         'C': 100,
         'D': 500,
         'M': 1000,
-        'IV': 4,
-        'IX': 9,
-        'XL': 40,
-        'XC': 90,
-        'CD': 400,
-        'CM': 900
     }
 
     for i in range(len_s-1, -1, -1):
