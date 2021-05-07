@@ -3,6 +3,10 @@ def weight_average(my_list=[]):
     res = 0
     temp = 0
     divi = 0
+
+    if (0 == len(my_list)):
+        return 0
+
     for item in my_list:
         for j in range(0, len(item)):
             if (j == 0):
