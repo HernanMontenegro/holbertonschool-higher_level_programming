@@ -25,11 +25,10 @@ def roman_to_int(roman_string):
     for i in range(len_s-1, -1, -1):
         if translation[roman_string[i]] >= prev:
             int_val += translation[roman_string[i]]
-  
+
         else:
             int_val -= translation[roman_string[i]]
-  
-        prev = translation[roman_string[i]]
 
+        prev = translation[roman_string[i]]
 
     return int_val
