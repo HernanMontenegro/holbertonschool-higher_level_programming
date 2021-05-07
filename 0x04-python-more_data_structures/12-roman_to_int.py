@@ -3,8 +3,9 @@ def roman_to_int(roman_string):
     if not roman_string or not isinstance(roman_string, str):
         return None
     int_val = 0
-    current_val = 0
-    prev_val = 0
+    first_val = 0
+    last_val = 0
+    start_sum_index = 0
     translation = {
         'I': 1,
         'V': 5,
@@ -15,11 +16,17 @@ def roman_to_int(roman_string):
         'M': 1000
     }
 
-    for i in range(0, len(roman_string)):
-        current_val = translation[roman_string[i]]
-        int_val += current_val
-        if prev_val < current_val and prev_val != 0:
-            int_val -= prev_val * 2
-        prev_val = current_val
+    first_val = translation[roman_string[0]]
+    last_val = translation[roman_string[len(roman_string) - 1]]
+
+    if (first_val <  last_val):
+        for i in range(0, len(roman_string)):
+            int_val -= first_val
+            if (first_val < translation[roman_string[i + 1]]):
+                    start_sum_index = i + 1
+                    break
+    
+    for i in range(start_sum_index, len(roman_string)):
+        int_val += translation[roman_string[i]]
 
     return int_val
