@@ -27,7 +27,7 @@ def roman_to_int(roman_string):
         current_val = translation[roman_string[i]]
         if i + 1 < len(roman_string):
             next_val = translation[roman_string[i + 1]]
-        
+
         if next_val != 0 and roman_string[i:i+2] in translation:
             int_val += translation[roman_string[i:i+2]]
             i += 2
@@ -37,6 +37,5 @@ def roman_to_int(roman_string):
         current_val = 0
         next_val = 0
         i += 1
-
 
     return int_val
