@@ -2,15 +2,15 @@
 '''Execute'''
 
 
-class Square:
-    '''Class providing all functions for
-    creating a Square'''
+class Node:
+    '''asd'''
+    __data = 0
+    __next_node = None
 
     def __init__(self, data, next_node=None):
-        '''Create a square'''
-◘◘◘
-        self.__data = data
-        self.__next_node = next_node
+        '''asd'''
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -33,37 +33,40 @@ class Square:
         self.__next_node = value
 
 class SinglyLinkedList:
-    head = None
+    ''''LINKED LIST'''
+
+    __head = None
 
     def __init__(self):
-        pass
-    
+        '''Init'''
+        return
+
     def sorted_insert(self, value):
         new_node = Node(value)
-        cursor = SinglyLinkedList.head
+        cursor = self.__head
 
         # Ask if there is not head
-        if (not SinglyLinkedList.head):
-            SinglyLinkedList.head = new_node
+        if (not self.__head):
+            self.__head = new_node
+            return
+
+        if (cursor.data > value):
+            new_node.next_node = cursor
+            self.__head = new_node
             return
 
         # Reach the last node
-        while cursor != None:
-            if (value < 0 and cursor.data < 0):
-                if (value > cursor.data):
-                    SinglyLinkedList.head = new_node
-                    new_node.next_node = cursor
-                    return
-            elif (value >= 0 and cursor.data >= 0):
-                if (value > cursor.data):
-                    cursor.next_node = new_node
-                    return
+        while cursor.next_node != None:
+            if (cursor.next_node.data > value):
+                new_node.next_node = cursor.next_node
+                cursor.next_node = new_node
+                return
             cursor = cursor.next_node
         
-        
+        cursor.next_node = new_node
 
     def __str__(self):
-        cursor = SinglyLinkedList.head
+        cursor = self.__head
 
         while (cursor.next_node != None):
             print("{:d}".format(cursor.data))
