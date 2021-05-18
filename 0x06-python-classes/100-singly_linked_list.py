@@ -34,7 +34,7 @@ class Node:
 
 
 class SinglyLinkedList:
-    ''''LINKED LIST'''
+    '''LINKED LIST'''
 
     __head = None
 
