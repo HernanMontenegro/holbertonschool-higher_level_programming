@@ -28,9 +28,10 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if (not isinstance(value, Node) and value != None):
+        if (not isinstance(value, Node) and value is not None):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList:
     ''''LINKED LIST'''
@@ -42,6 +43,7 @@ class SinglyLinkedList:
         return
 
     def sorted_insert(self, value):
+        '''ASD Mega insert sorted'''
         new_node = Node(value)
         cursor = self.__head
 
@@ -56,19 +58,21 @@ class SinglyLinkedList:
             return
 
         # Reach the last node
-        while cursor.next_node != None:
+        while cursor.next_node is not None:
             if (cursor.next_node.data > value):
                 new_node.next_node = cursor.next_node
                 cursor.next_node = new_node
                 return
             cursor = cursor.next_node
-        
+
         cursor.next_node = new_node
 
     def __str__(self):
+        '''here there is a locked kitten'''
+
         cursor = self.__head
 
-        while (cursor.next_node != None):
+        while (cursor.next_node is not None):
             print("{:d}".format(cursor.data))
             cursor = cursor.next_node
         return str(cursor.data)
