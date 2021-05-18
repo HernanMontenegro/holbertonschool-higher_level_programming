@@ -48,7 +48,7 @@ class SinglyLinkedList:
         cursor = self.__head
 
         # Ask if there is not head
-        if (not self.__head):
+        if (self.__head is None):
             self.__head = new_node
             return
 
@@ -71,6 +71,9 @@ class SinglyLinkedList:
         '''here there is a locked kitten'''
 
         cursor = self.__head
+
+        if (cursor is None):
+            return ""
 
         while (cursor.next_node is not None):
             print("{:d}".format(cursor.data))
