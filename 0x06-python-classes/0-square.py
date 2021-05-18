@@ -3,5 +3,9 @@
 
 
 class Square:
+    '''Class providing all functions for
+    creating a Square'''
+
     def __init__(self):
         '''Create a square'''
+        return
