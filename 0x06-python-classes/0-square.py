@@ -3,6 +3,5 @@
 
 
 class Square:
-    '''Create a square'''
-
-    pass
+    def __init__(self):
+        '''Create a square'''
