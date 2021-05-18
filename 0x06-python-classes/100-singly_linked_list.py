@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-class Node:
+'''Execute'''
+class Square:
     def __init__(self, data, next_node=None):
+        '''Create a square'''
+◘◘◘
         self.__data = data
         self.__next_node = next_node
 

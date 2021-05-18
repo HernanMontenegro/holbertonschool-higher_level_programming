@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+'''Execute'''
 class Square:
     def __init__(self, size=0, position=(0, 0)):
+        '''Create a square'''
+
         self.__size = 0
         self.__position = (0, 0)
 
