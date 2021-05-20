@@ -1,0 +1,38 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# prints a name
+
+# ======================== Success cases =====================
+
+# giving two strings as parameters
+>>> say_my_name("Hernan", "Montenegro")
+My name is Hernan Montenegro
+
+# ======================= Edge Cases ==========================
+
+# giving any other type but string in last_name
+>>> say_my_name("Isaac", 67)
+Traceback (most recent call last):
+        ...
+TypeError: last_name must be a string
+
+# giving any other type but string in last_name
+>>> say_my_name(67, "Moriah")
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+# giving null values?
+>>> say_my_name(None, None)
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+# giving boolean values?
+>>> say_my_name(True, "The End is Nigh")
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+
+# ============================================================
