@@ -1,0 +1,48 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+#Adds two integers or floats:
+
+#=====================Testing Integer values or floats==================
+
+#simple addition with two integers
+>>> add_integer(1, 2)
+3
+
+#simple addition with two floats
+>>> add_integer(1.0, 2.0)
+3
+
+#addition with mixed types- a: int, b: float
+>>> add_integer(2, 4.0)
+6
+
+#addition with mixed types- a: float with a half, b: int
+>>> add_integer(30.5, 7)
+37
+
+
+#=======================Testing With non integers==========================
+
+# a recieving a string type
+>>> add_integer("https://www.twitch.tv/dreadzitodev", 78)
+Traceback (most recent call last):
+        ...
+TypeError: a must be an integer
+
+# b recieving a string type
+>>> add_integer(4, "home")
+Traceback (most recent call last):
+        ...
+TypeError: b must be an integer
+
+# any parameter recieves a list type
+>>> add_integer([1, 2, 3], 6)
+Traceback (most recent call last):
+        ...
+TypeError: a must be an integer
+
+# any parameter recieves a very LONG number
+>>> add_integer(1000000000000000000000, 1)
+1000000000000000000001
+
+#==================================================================
