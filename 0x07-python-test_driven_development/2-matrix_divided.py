@@ -19,7 +19,7 @@ def matrix_divided(matrix, div):
     elif (div == 0):
         raise ZeroDivisionError("division by zero")
     # Matrix is NOT a matrix O.-
-    elif(not (all(isinstance(ele, list) for ele in matrix))):
+    elif (matrix is None or not (all(isinstance(ele, list) for ele in matrix))):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     # Copy every nested list
@@ -34,7 +34,8 @@ def matrix_divided(matrix, div):
                 raise TypeError("Each row of the matrix must have the same size")
 
             # May we have an impostor type in the list ( ͡⚈ ͜ʖ ͡⚈)
-            if (type(divided[i][j]) == int or type(divided[i][j]) == float):
+            if (type(divided[i][j]) == int or type(divided[i][j]) == float or
+                type(divided[i][j]) == bool):
                 divided[i][j] /= div
                 divided[i][j] = round(divided[i][j], 2)
             else:

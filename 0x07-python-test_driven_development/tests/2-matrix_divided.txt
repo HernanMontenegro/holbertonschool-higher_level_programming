@@ -51,4 +51,15 @@ Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+# Matrix including booleans
+>>> matrix = [[False, True], [True, 4]]
+>>> matrix_divided(matrix, 2)
+[[0.0, 0.5], [0.5, 2.0]]
+
+# Giving a null matrix
+>>> matrix_divided(None, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 #============================================================================
