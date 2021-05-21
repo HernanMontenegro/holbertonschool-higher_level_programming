@@ -38,6 +38,10 @@ un  pedazo   de   lindo
 
 >>> text_indentation("")
 
+>>> text_indentation("My name is: DreadZitoDev")
+My name is:
+<BLANKLINE>
+DreadZitoDev
 
 # ========================= Edge Cases =========================
 
