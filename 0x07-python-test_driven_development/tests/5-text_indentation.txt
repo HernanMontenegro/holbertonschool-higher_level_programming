@@ -1,0 +1,55 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Indent a string of text by '.', '?' and ':' chars
+
+# ======================== Success Cases =======================
+
+# giving a puntuated string
+>>> text_indentation("something.      is.     wrong")
+something.
+<BLANKLINE>
+is.
+<BLANKLINE>
+wrong
+
+# normal string
+>>> text_indentation("Dreadful Chess")
+Dreadful Chess
+
+# -------------------- Giving strange strings --------------------
+>>> text_indentation("                   ")
+<BLANKLINE>
+
+>>> text_indentation("           s.")
+           s.
+
+>>> text_indentation("    _DreadZillo?  es.... un  pedazo   de   lindo")
+    _DreadZillo?
+<BLANKLINE>
+es.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+un  pedazo   de   lindo
+
+>>> text_indentation("")
+
+
+# ========================= Edge Cases =========================
+
+# giving a boolean
+>>> text_indentation(True)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# giving a null value
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
