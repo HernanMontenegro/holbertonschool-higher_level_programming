@@ -31,7 +31,7 @@ class Rectangle:
         final_str = ""
 
         if (self.width == 0 or self.height == 0):
-            return rec
+            return final_str
         for i in range(0, self.__height):
             final_str += ("#" * self.__width)
             if (i != self.__height - 1):
