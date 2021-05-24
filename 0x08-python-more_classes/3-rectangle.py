@@ -24,6 +24,14 @@ class Rectangle:
     def perimeter(self):
         return (self.__height * 2) + (self.__width * 2)
 
+    def __str__(self):
+        final_str = ""
+
+        for i in range(0, self.__height):
+            final_str += ("#" * self.__width) + '\n'
+
+        return final_str
+
     @property
     def width(self):
         return self.__width
