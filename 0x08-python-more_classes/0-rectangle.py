@@ -10,4 +10,6 @@ class Rectangle:
     """
 
     def __init__(self):
+        """ Called when a new instance is created """
+
         return
