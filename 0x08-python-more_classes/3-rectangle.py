@@ -30,6 +30,8 @@ class Rectangle:
         """ asd """
         final_str = ""
 
+        if (self.width == 0 or self.height == 0):
+            return rec
         for i in range(0, self.__height):
             final_str += ("#" * self.__width)
             if (i != self.__height - 1):
