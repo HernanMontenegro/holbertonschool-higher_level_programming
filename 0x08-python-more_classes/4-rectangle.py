@@ -34,6 +34,12 @@ class Rectangle:
 
         return final_str
 
+    def __repr__(self):
+        width_str = str(self.__width)
+        height_str = str(self.__height)
+        final_str = "Rectangle(" + width_str + ", " + height_str + ")"
+        return final_str
+
     @property
     def width(self):
         return self.__width
