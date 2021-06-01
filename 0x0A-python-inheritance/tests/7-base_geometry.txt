@@ -89,5 +89,5 @@ TypeError: jijiji must be an integer
 # Trying to get the area... of what???
 >>> bg.area()
 Traceback (most recent call last):
-...
+    ...
 Exception: area() is not implemented
