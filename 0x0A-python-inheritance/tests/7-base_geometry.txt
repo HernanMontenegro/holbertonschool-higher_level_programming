@@ -43,23 +43,46 @@ TypeError: elasti must be an integer
 # Passing a dictionary
 >>> bg.integer_validator("book of shadows", {10, 0})
 Traceback (most recent call last):
-...
+    ...
 TypeError: book of shadows must be an integer
 
 # Passing a list
 >>> bg.integer_validator("kk", [8, 69])
 Traceback (most recent call last):
-...
+    ...
 TypeError: kk must be an integer
 
 # Passing a list of lists
 >>> bg.integer_validator("matrixiz", [[8, 69], [98]])
 Traceback (most recent call last):
-...
+    ...
+TypeError: matrixiz must be an integer
+
+# Passing a tuple
+>>> bg.integer_validator("matrixiz", (0, 2))
+Traceback (most recent call last):
+    ...
 TypeError: matrixiz must be an integer
 
 # Passing a boolean
 >>> bg.integer_validator("i'm super clever", True)
 Traceback (most recent call last):
-...
+    ...
 TypeError: i'm super clever must be an integer
+
+# No  args for validator
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Giving just 1 arg for validator
+>>> bg.integer_validator("kiko")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'value'
+
+>>> bg.integer_validator("jijiji", "impostor")
+Traceback (most recent call last):
+    ...
+TypeError: num must be an integer
