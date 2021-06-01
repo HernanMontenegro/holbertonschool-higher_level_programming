@@ -82,7 +82,14 @@ Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+# Giving an string instead of an int
 >>> bg.integer_validator("jijiji", "impostor")
 Traceback (most recent call last):
     ...
 TypeError: jijiji must be an integer
+
+# Trying to get the area... of what???
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
