@@ -28,8 +28,6 @@ class Rectangle(BaseGeometry):
 class Square(Rectangle):
     ''' Square definition '''
 
-    __size = 0
-
     def __init__(self, size):
         ''' Initialization '''
         super().integer_validator("size", size)
