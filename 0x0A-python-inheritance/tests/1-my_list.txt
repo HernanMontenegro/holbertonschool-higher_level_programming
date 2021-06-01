@@ -1,0 +1,11 @@
+>>> MyList = __import__('1-my_list').MyList
+
+#prins a list print_sorted
+
+>>> random_list = MyList()
+>>> random_list.append(15)
+>>> random_list.append(-5)
+>>> random_list.append(5)
+>>> random_list.append(-2)
+>>> random_list.print_sorted()
+[-5, -2, 5, 15]
