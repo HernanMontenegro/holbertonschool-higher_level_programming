@@ -46,6 +46,18 @@ Traceback (most recent call last):
 ...
 TypeError: book of shadows must be an integer
 
+# Passing a list
+>>> bg.integer_validator("kk", [8, 69])
+Traceback (most recent call last):
+...
+TypeError: kk must be an integer
+
+# Passing a list of lists
+>>> bg.integer_validator("matrixiz", [[8, 69], [98]])
+Traceback (most recent call last):
+...
+TypeError: matrixiz must be an integer
+
 # Passing a boolean
 >>> bg.integer_validator("i'm super clever", True)
 Traceback (most recent call last):
