@@ -21,3 +21,33 @@ TypeError: it can't be right must be an integer
 Traceback (most recent call last):
     ...
 TypeError: now? must be an integer
+
+#  Passing a negative value
+>>> bg.integer_validator("pepito", -16)
+Traceback (most recent call last):
+    ...
+ValueError: pepito must be greater than 0
+
+#  Passing zero
+>>> bg.integer_validator("Isaac", 0)
+Traceback (most recent call last):
+    ...
+ValueError: Isaac must be greater than 0
+
+# Passing a string
+>>> bg.integer_validator("elasti","cow")
+Traceback (most recent call last):
+    ...
+TypeError: elasti must be an integer
+
+# Passing a dictionary
+>>> bg.integer_validator("book of shadows", {10, 0})
+Traceback (most recent call last):
+...
+TypeError: book of shadows must be an integer
+
+# Passing a boolean
+>>> bg.integer_validator("i'm super clever", True)
+Traceback (most recent call last):
+...
+TypeError: i'm super clever must be an integer
