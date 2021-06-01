@@ -2,6 +2,8 @@
 
 #prins a list print_sorted
 
+#===================== Success Cases ====================#
+
 >>> random_list = MyList()
 >>> random_list.append(15)
 >>> random_list.append(-5)
@@ -9,3 +11,18 @@
 >>> random_list.append(-2)
 >>> random_list.print_sorted()
 [-5, -2, 5, 15]
+
+#===================== Failure Cases ====================#
+
+# print non list
+>>> randdom_list = MyList(None)
+Traceback (most recent call last):
+    ...
+TypeError: 'NoneType' object is not iterable
+
+# print matrix
+>>> randdom_list = MyList([1, 2, [3], 4 , 5])
+>>> randdom_list.print_sorted()
+Traceback (most recent call last):
+    ...
+TypeError: unorderable types: list() < int()

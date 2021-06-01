@@ -1,0 +1,23 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+#The base geometry class tests
+
+#====================== Success Cases =====================
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("iq", 34)
+>>> bg.integer_validator("probability of die today", 65)
+
+#====================== Failure Cases =====================
+
+# Passing a none value
+>>> bg.integer_validator("it can't be right", None)
+Traceback (most recent call last):
+    ...
+TypeError: it can't be right must be an integer
+
+# Passing a list
+>>> bg.integer_validator("now?", [1, 30, 8])
+Traceback (most recent call last):
+    ...
+TypeError: now? must be an integer
