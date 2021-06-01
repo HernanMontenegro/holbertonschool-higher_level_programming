@@ -2,13 +2,11 @@
 
 #The base geometry class tests
 
-#====================== Success Cases =====================
+#====================== Tests =====================
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("iq", 34)
 >>> bg.integer_validator("probability of die today", 65)
-
-#====================== Failure Cases =====================
 
 # Passing a none value
 >>> bg.integer_validator("it can't be right", None)
