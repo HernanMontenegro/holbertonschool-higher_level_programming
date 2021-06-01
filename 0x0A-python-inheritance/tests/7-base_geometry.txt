@@ -80,9 +80,9 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 >>> bg.integer_validator("kiko")
 Traceback (most recent call last):
     ...
-TypeError: integer_validator() missing 2 required positional arguments: 'value'
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 >>> bg.integer_validator("jijiji", "impostor")
 Traceback (most recent call last):
     ...
-TypeError: num must be an integer
+TypeError: jijiji must be an integer
