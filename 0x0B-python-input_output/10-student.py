@@ -9,11 +9,13 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self, attrs=[]):
+    def to_json(self, attrs=None):
         ''' retrieves a dictionary representation '''
         my_dict = {}
-        if (attrs != []):
+        if (attrs != None and type(attrs) == list):
             for item in attrs:
+                if (type(item) != str):
+                    continue
                 if (item == "first_name"):
                     my_dict['first_name'] = self.first_name
                 elif (item == "last_name"):
