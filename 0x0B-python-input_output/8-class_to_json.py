@@ -10,4 +10,3 @@ def class_to_json(obj):
     for JSON
     '''
     return obj.__dict__
-    
