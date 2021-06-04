@@ -25,6 +25,15 @@ class Rectangle(Base):
         for i in range(0, self.height):
             print("#" * self.width)
 
+    def __str__(self):
+        ''' string representation of the instance '''
+        id = self.id
+        w = self.width
+        h = self.height
+        x = self.x
+        y = self.y
+        return "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".format(id, x, y, w, h)
+
     @property
     def width(self):
         ''' width getter '''
