@@ -27,6 +27,22 @@ class Rectangle(Base):
             print(' ' * self.x, end="")
             print("#" * self.width)
 
+    def update(self, *args):
+        ''' Updates the variables values
+        I did not want to do this way but...
+        life has difficult choices '''
+        for i in range(0, len(args)):
+            if (i == 0):
+                self.id = args[0]
+            elif (i == 1):
+                self.width = args[1]
+            elif (i == 2):
+                self.height = args[2]
+            elif(i == 3):
+                self.x = args[3]
+            elif (i == 4):
+                self.y = args[4]
+
     def __str__(self):
         ''' string representation of the instance '''
         id = self.id
