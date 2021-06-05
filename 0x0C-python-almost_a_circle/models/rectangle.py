@@ -27,10 +27,22 @@ class Rectangle(Base):
             print(' ' * self.x, end="")
             print("#" * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         ''' Updates the variables values
         I did not want to do this way but...
         life has difficult choices '''
+        if (len(args) == 0):
+            for key in kwargs:
+                if key == "id":
+                    self.id = kwargs['id']
+                elif key == "width":
+                    self.width = kwargs['width']
+                elif key == "height":
+                    self.height = kwargs['height']
+                elif key == "x":
+                    self.x = kwargs['x']
+                elif key == "y":
+                    self.y = kwargs['y']
         for i in range(0, len(args)):
             if (i == 0):
                 self.id = args[0]
