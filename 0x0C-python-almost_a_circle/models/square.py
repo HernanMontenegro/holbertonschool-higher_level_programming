@@ -25,7 +25,7 @@ class Square(Rectangle):
         ''' Updates the variables values
         I did not want to do this way but...
         life has difficult choices '''
-        if (len(args) == 0):
+        if (len(args) == 0 or args is None):
             for key in kwargs:
                 if key == "id":
                     self.id = kwargs['id']

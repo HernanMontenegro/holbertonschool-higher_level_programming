@@ -30,7 +30,10 @@ class Base:
     def from_json_string(json_string):
         ''' Returns the list of JSON string
         representation '''
-        
+        array = []
+        if (json_string is None):
+            return array
+        return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -48,3 +51,20 @@ class Base:
                     json_str += ", "
             json_str += "]"
             f.write(json_str)
+    
+    @classmethod
+    def create(cls, **dictionary):
+        ''' Creates a new instance from a dictionary '''
+        new_instance = cls(12, 13)
+        new_instance.update(**dictionary)
+        return new_instance
+
+    @classmethod
+    def load_from_file(cls):
+        j_list= []
+        ins_list= []
+        with open("{}.json".format(cls.__name__), "r") as f:
+            j_list = cls.from_json_string(f.read())
+        for item in j_list:
+            ins_list.append(cls.create(**item)) 
+        return ins_list
