@@ -39,19 +39,19 @@ class Base:
     def save_to_file(cls, list_objs):
         ''' Saves the json representation
         of 2 intances who inherits from me '''
-        json_str = "[]"
+        s = "[]"
         with open(file="{}.json".format(cls.__name__), mode="w") as f:
             if (list_objs is None):
-                f.write(json_str)
+                f.write(s)
                 return
-            json_str = "["
+            s = "["
             for i in range(0, len(list_objs)):
-                json_str += list_objs[i].to_json_string(list_objs[i].to_dictionary())
+                s += list_objs[i].to_json_string(list_objs[i].to_dictionary())
                 if (i != len(list_objs) - 1):
-                    json_str += ", "
-            json_str += "]"
-            f.write(json_str)
-    
+                    s += ", "
+            s += "]"
+            f.write(s)
+
     @classmethod
     def create(cls, **dictionary):
         ''' Creates a new instance from a dictionary '''
@@ -61,8 +61,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        j_list= []
-        ins_list= []
+        j_list = []
+        ins_list = []
         try:
             with open("{}.json".format(cls.__name__), "r") as f:
                 j_list = cls.from_json_string(f.read())

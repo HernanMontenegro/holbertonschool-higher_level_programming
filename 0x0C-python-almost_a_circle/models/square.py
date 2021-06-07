@@ -12,7 +12,7 @@ class Square(Rectangle):
         ''' Class constructor '''
         super().__init__(size, size, x, y, id)
         self.size = size
-    
+
     def __str__(self):
         ''' string representation of object '''
         id = self.id
