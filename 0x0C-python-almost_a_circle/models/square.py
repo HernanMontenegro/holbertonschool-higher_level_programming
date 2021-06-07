@@ -46,6 +46,16 @@ class Square(Rectangle):
             elif (i == 3):
                 self.y = args[3]
 
+    def to_dictionary(self):
+        ''' Dictionary representation '''
+        dicti = {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
+        return dicti
+
     @property
     def size(self):
         ''' size getter '''
