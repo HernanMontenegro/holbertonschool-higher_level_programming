@@ -43,6 +43,7 @@ class Rectangle(Base):
                     self.x = kwargs['x']
                 elif key == "y":
                     self.y = kwargs['y']
+            return
         for i in range(0, len(args)):
             if (i == 0):
                 self.id = args[0]
