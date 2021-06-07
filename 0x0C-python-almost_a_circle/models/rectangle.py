@@ -56,6 +56,17 @@ class Rectangle(Base):
             elif (i == 4):
                 self.y = args[4]
 
+    def to_dictionary(self):
+        ''' Dictionary representation '''
+        dicti = {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
+        return dicti
+
     def __str__(self):
         ''' string representation of the instance '''
         id = self.id
