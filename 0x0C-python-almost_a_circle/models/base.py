@@ -63,8 +63,11 @@ class Base:
     def load_from_file(cls):
         j_list= []
         ins_list= []
-        with open("{}.json".format(cls.__name__), "r") as f:
-            j_list = cls.from_json_string(f.read())
-        for item in j_list:
-            ins_list.append(cls.create(**item)) 
+        try:
+            with open("{}.json".format(cls.__name__), "r") as f:
+                j_list = cls.from_json_string(f.read())
+            for item in j_list:
+                ins_list.append(cls.create(**item))
+        except:
+            return ins_list
         return ins_list
