@@ -4,24 +4,14 @@ const argv = process.argv;
 let result = 0;
 
 if (argv[2] !== undefined && argv.length !== 3) {
-  let bigger = parseInt(argv[2]);
-  let secondBigger = parseInt(argv[2]);
 
-  for (let i = 2; i < argv.length; i++) {
-    const currNum = parseInt(argv[i]);
-    if (bigger < currNum) {
-      bigger = currNum;
-    }
-  }
+  let argvCpy = argv.slice(2, argv.length).map(function(item) {
+    return parseInt(item, 10);
+  });
+  let indx = argvCpy.indexOf(Math.max.apply(null, argvCpy));
 
-  for (let i = 0; i < argv.length; i++) {
-    const currNum = parseInt(argv[i]);
-    if (secondBigger < currNum && currNum !== bigger) {
-      secondBigger = currNum;
-    }
-  }
-
-  result = secondBigger;
+  argvCpy.splice(indx, 1);
+  result = Math.max.apply(null, argvCpy);
 }
 
 console.log(result);
