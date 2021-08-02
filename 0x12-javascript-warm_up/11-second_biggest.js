@@ -1,10 +1,9 @@
 #!/usr/bin/node
 
 const argv = process.argv;
+let result = 0;
 
-if (argv[2] === undefined || argv.length === 3) {
-  console.log('0');
-} else {
+if (argv[2] !== undefined && argv.length !== 3) {
   let bigger = parseInt(argv[2]);
   let secondBigger = parseInt(argv[2]);
 
@@ -22,5 +21,7 @@ if (argv[2] === undefined || argv.length === 3) {
     }
   }
 
-  console.log(secondBigger);
+  result = secondBigger;
 }
+
+console.log(result);
