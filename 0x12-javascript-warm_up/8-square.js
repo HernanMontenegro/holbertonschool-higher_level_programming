@@ -7,7 +7,6 @@ if (size === undefined || isNaN(parseInt(size, 10))) {
     return;
 }
 
-let str = ("X".repeat(size) + '\n').repeat(size);
-str = str.slice(0, -1);
-
-console.log(str);
+for (let i = 0; i < size; i++) {
+    console.log(("X".repeat(size)));
+}
