@@ -1,27 +1,27 @@
 #!usr/bin/node
 
 module.exports = class Rectangle {
-    constructor (w, h) {
-      if (isNaN(parseInt(w)) || w === 0 || parseInt(w) < 0) { return; }
-      if (isNaN(parseInt(h)) || h === 0 || parseInt(h) < 0) { return; }
-  
-      this.width = w;
-      this.height = h;
-    }
-  
-    print () {
-      console.log(('X'.repeat(this.width) + '\n').repeat(this.height).slice(0, -1));
-    }
+  constructor (w, h) {
+    if (isNaN(parseInt(w)) || w === 0 || parseInt(w) < 0) { return; }
+    if (isNaN(parseInt(h)) || h === 0 || parseInt(h) < 0) { return; }
 
-    rotate() {
-        let aux_h = this.height;
+    this.width = w;
+    this.height = h;
+  }
 
-        this.height = this.width;
-        this.width = aux_h;
-    }
+  print () {
+    console.log(('X'.repeat(this.width) + '\n').repeat(this.height).slice(0, -1));
+  }
 
-    double() {
-        this.width *= 2;
-        this.height *= 2;
-    }
+  rotate () {
+    const auxH = this.height;
+
+    this.height = this.width;
+    this.width = auxH;
+  }
+
+  double () {
+    this.width *= 2;
+    this.height *= 2;
+  }
 };

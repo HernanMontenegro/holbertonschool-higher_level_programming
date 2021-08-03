@@ -3,6 +3,6 @@
 let prints = 0;
 
 exports.logMe = function (item) {
-    console.log(prints + ": " + item);
-    prints++;
-}
+  console.log(prints + ': ' + item);
+  prints++;
+};
