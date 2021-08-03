@@ -2,10 +2,9 @@
 
 module.exports = class Rectangle {
   constructor (w, h) {
-    if (w === undefined || isNaN(parseInt(w)) || parseInt(w) <= 0) { return; }
-    if (h === undefined || isNaN(parseInt(h)) || parseInt(h) <= 0) { return; }
-
-    this.width = w;
-    this.height = h;
+    if (w > 0 && h > 0) {
+      this.width = w;
+      this.height = h;
+    }
   }
 };
