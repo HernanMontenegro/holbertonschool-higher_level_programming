@@ -9,7 +9,8 @@ def main():
 
     cursor = db.cursor()
 
-    sql = "SELECT c.id, c.name, s.name FROM cities c INNER JOIN states s ON s.id = c.state_id;"
+    sql = "SELECT c.id, c.name, s.name FROM cities c INNER JOIN states s "
+    sql += "ON s.id = c.state_id;"
 
     cursor.execute(sql)
 
