@@ -7,7 +7,7 @@ db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
 
 cursor = db.cursor()
 
-sql = "SELECT * FROM states"
+sql = "SELECT * FROM states ORDER BY states.id ASC;"
 
 cursor.execute(sql)
 
