@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+''' 2 - module '''
 
 import MySQLdb
 from sys import argv
 
 
 def main():
+    ''' Main func '''
     db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
 
     cursor = db.cursor()
