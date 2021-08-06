@@ -17,5 +17,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    for inst in session.query(State).filter(text("states.name LIKE BINARY '%a%'")).order_by(State.id):
+    for inst in session.query(State).filter(
+                                    text("states.name LIKE BINARY '%a%'")
+                                    ).order_by(State.id):
         print(str(inst.id) + ": " + inst.name)

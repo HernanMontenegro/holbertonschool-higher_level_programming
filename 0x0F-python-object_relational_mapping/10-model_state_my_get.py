@@ -20,7 +20,7 @@ if __name__ == "__main__":
     rows = session.query(State).filter(text(
         "states.name = ('{}')".format(av[4]))
         ).order_by(State.id).all()
-    
+
     if (len(rows) == 0):
         print("Not found")
     else:
