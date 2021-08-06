@@ -11,7 +11,8 @@ def main():
 
     cursor = db.cursor()
 
-    sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC;"
+    sql = "SELECT * FROM states WHERE name LIKE BINARY 'N%' "
+    sql += "ORDER BY states.id ASC;"
 
     cursor.execute(sql)
 
