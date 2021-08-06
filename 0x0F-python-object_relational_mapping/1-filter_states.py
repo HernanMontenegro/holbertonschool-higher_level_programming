@@ -3,6 +3,7 @@
 import MySQLdb
 from sys import argv
 
+
 def main():
     db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
 
@@ -20,5 +21,6 @@ def main():
 
     db.close()
 
+
 if __name__ == "__main__":
-   main()
+    main()
