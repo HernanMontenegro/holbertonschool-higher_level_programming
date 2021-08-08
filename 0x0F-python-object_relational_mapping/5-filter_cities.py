@@ -17,8 +17,10 @@ def main():
 
     data = cursor.fetchone()
 
-    while (data):
-        result += data[1] + ", "
+    for i in range(0, cursor.rowcount):
+        result += data[1]
+        if (i != cursor.rowcount - 1):
+            result += ", "
         data = cursor.fetchone()
 
     result = result[: len(result) - 2]
