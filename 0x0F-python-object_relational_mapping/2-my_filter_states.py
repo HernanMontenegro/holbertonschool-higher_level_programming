@@ -11,7 +11,6 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     sql = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
-    sql += " ORDER BY id ASC;"
 
     cursor.execute(sql)
 
