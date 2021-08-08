@@ -18,6 +18,7 @@ if __name__ == "__main__":
     data = cursor.fetchall()
 
     for row in data:
-        print(row)
+        if (row[1] == argv[4]):
+            print(row)
 
     db.close()
