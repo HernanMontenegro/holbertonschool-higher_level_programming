@@ -16,10 +16,9 @@ if __name__ == "__main__":
 
     session = Session()
 
-    rows = session.query(State).order_by(State.id).all()
+    first_row = session.query(State).order_by(State.id).first()
 
-    if (rows is None or len(rows) == 0):
+    if (first_row is None):
         print("Nothing")
     else:
-        first_row = rows[0]
         print(str(first_row.id) + ": " + first_row.name)
