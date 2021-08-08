@@ -11,13 +11,13 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     sql = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
+    sql += " ORDER BY id ASC;"
 
     cursor.execute(sql)
 
-    data = cursor.fetchone()
+    data = cursor.fetchall()
 
-    while (data):
-        print(data)
-        data = cursor.fetchone()
+    for row in data:
+        print(row)
 
     db.close()
