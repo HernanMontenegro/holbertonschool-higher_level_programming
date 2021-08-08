@@ -5,20 +5,26 @@ import MySQLdb
 from sys import argv
 
 
-if __name__ == "__main__":
+def main():
+    ''' Main func '''
     db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
 
     cursor = db.cursor()
 
     sql = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
-    sql += " ORDER BY id ASC;"
+    sql += " ORDER BY states.id ASC;"
 
     cursor.execute(sql)
 
-    data = cursor.fetchall()
+    data = cursor.fetchone()
 
-    for row in data:
-        if (row[1] == argv[4]):
-            print(row)
+    while (data):
+        if (data[1] == argv[4]):
+            print(data)
+        data = cursor.fetchone()
 
     db.close()
+
+
+if __name__ == "__main__":
+    main()
