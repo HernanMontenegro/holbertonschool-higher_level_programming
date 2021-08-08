@@ -23,8 +23,6 @@ def main():
             result += ", "
         data = cursor.fetchone()
 
-    result = result[: len(result) - 2]
-
     print(result)
 
     db.close()
