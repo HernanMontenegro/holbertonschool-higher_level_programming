@@ -10,7 +10,7 @@ def main():
     cursor = db.cursor()
 
     result = ""
-    sql = "SELECT c.id, c.name FROM cities c INNER JOIN states s "
+    sql = "SELECT c.name FROM cities c INNER JOIN states s "
     sql += "ON s.id = c.state_id WHERE s.name = ('{}')".format(argv[4])
 
     cursor.execute(sql)
@@ -18,7 +18,7 @@ def main():
     data = cursor.fetchone()
 
     for i in range(0, cursor.rowcount):
-        result += data[1]
+        result += data[0]
         if (i != cursor.rowcount - 1):
             result += ", "
         data = cursor.fetchone()
