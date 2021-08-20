@@ -8,8 +8,10 @@ import sys
 if __name__ == '__main__':
     repo = sys.argv[1]
     name = sys.argv[2]
-    url = 'https://api.github.com/repos/'+ repo +'/'+ name +'/commits'
-    req = requests.get(url)
+    url = 'https://api.github.com/repos/' + name + '/' + repo + '/commits'
+    headers = {'Accept': 'application/vnd.github.v3+json'}
+    req = requests.get(url, headers=headers)
+
     comm = req.json()
 
     for it in comm[:10]:
