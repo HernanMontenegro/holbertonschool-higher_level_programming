@@ -9,8 +9,7 @@ if __name__ == '__main__':
     repo = sys.argv[1]
     name = sys.argv[2]
     url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, name)
-    headers = {'Accept': 'application/vnd.github.v3+json'}
-    req = requests.get(url, headers=headers)
+    req = requests.get(url)
     comm = req.json()
 
     for it in comm[:10]:
