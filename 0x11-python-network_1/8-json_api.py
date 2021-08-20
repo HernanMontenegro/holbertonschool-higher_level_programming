@@ -20,6 +20,6 @@ if __name__ == "__main__":
         if (len(dic) == 0):
             print("No result")
         else:
-            print("[{}] {}".format(dic['id'], dic['name']))
+            print("[{}] {}".format(dic.get('id'), dic.get('name')))
     except Exception as e:
         print("Not a valid JSON")
