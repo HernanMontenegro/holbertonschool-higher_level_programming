@@ -16,10 +16,12 @@ if __name__ == "__main__":
     req = requests.post(hbtn_url, data=data)
     try:
         dic = req.json()
+        id = dic.get('id')
+        name = dic.get('name')
 
-        if (len(dic) == 0):
+        if (len(dic) == 0 or id is None or name is None):
             print("No result")
         else:
-            print("[{}] {}".format(dic.get('id'), dic.get('name')))
+            print("[{}] {}".format(id, name))
     except Exception as e:
         print("Not a valid JSON")
