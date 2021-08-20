@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Dynamic request '''
+''' Dynamic email request '''
 
 import urllib.request
 import sys
