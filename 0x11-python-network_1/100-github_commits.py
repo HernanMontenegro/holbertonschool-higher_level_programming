@@ -14,5 +14,5 @@ if __name__ == '__main__':
 
     comm = req.json()
 
-    for it in comm[:10]:
-        print(it.get('sha') + ': ' + it.get('author').get('login'))
+    for c in comm[:10]:
+        print(c.get('sha') + ': ' + c.get('commit').get('author').get('name'))
