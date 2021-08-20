@@ -3,8 +3,6 @@
 import requests
 import sys
 
-from requests.api import head
-
 if __name__ == '__main__':
     usr_name = sys.argv[1]
     usr_pass = sys.argv[2]
