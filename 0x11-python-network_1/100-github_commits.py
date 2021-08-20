@@ -16,11 +16,8 @@ if __name__ == '__main__':
     comm = req.json()
     last_ones = []
 
-    for i in range(0, len(comm)):
-        if (i == 10):
-            break
-        last_ones.append(comm[i])
+    last_indx = len(comm) - 1
 
-    for i in range(0, len(last_ones)):
-        it = last_ones[i]
+    for i in range(last_indx, last_indx - 11, -1):
+        it = comm[i]
         print(it.get('sha') + ': ' + it.get('author').get('login'))
