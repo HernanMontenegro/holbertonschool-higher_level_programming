@@ -11,8 +11,7 @@ const options = {
 req(options, function (err, res, body) {
   if (err) {
     console.log(err);
-  }
-  else {
-    console.log(JSON.parse(body).title)
+  } else {
+    console.log(JSON.parse(body).title);
   }
 });
