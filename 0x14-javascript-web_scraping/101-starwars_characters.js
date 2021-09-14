@@ -1,31 +1,31 @@
 #!/usr/bin/node
 
-const req = require('request');
-const reqp = require('request-promise');
 const av = process.argv;
-const options = {
-  url: `https://swapi-api.hbtn.io/api/films/${av[2]}`,
-  method: 'GET'
-};
+const req = require('request');
 
-req(options, function (err, res, body) {
-  if (err) {
-    console.log(err);
-  } else {
-    Ses(JSON.parse(body));
-  }
-});
+function doRequest(url) {
+  return new Promise(function (resolve, reject) {
+    req(url, function (error, res, body) {
+      if (!error && res.statusCode == 200) {
+        resolve(body);
+      } else {
+        reject(error);
+      }
+    });
+  });
+}
 
-async function Ses (obj) {
-  for (let i = 0; i < obj.characters.length; i++) {
-    const element = obj.characters[i];
-    const options = {
-      url: element,
-      method: 'GET'
-    };
-    const prom = reqp(options);
-    const body = await prom;
+async function main() {
+  const url = `https://swapi-api.hbtn.io/api/films/${av[2]}`
+  let res = await doRequest(url);
+  const arr = JSON.parse(res);
 
-    console.log(JSON.parse(body).name);
+  for (let j = 0; j < arr.characters.length; j++) {
+    const chrUrl = arr.characters[j];
+    let charData = await doRequest(chrUrl);
+    const name = JSON.parse(charData).name;
+    console.log(name);
   }
 }
+
+main();
